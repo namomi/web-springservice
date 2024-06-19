@@ -30,6 +30,10 @@ dependencies {
 
 	implementation 'org.springframework.boot:spring-boot-starter-mustache'
 
+	implementation 'org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.6.5'
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }

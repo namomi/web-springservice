@@ -1,11 +1,14 @@
 package com.namomi.web_springservice.web;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 
+import com.namomi.web_springservice.config.auth.LoginUser;
+import com.namomi.web_springservice.config.auth.dto.SessionUser;
 import com.namomi.web_springservice.service.PostsService;
 import com.namomi.web_springservice.web.dto.PostsResponseDto;
 
@@ -16,10 +19,15 @@ import lombok.RequiredArgsConstructor;
 public class IndexController {
 
 	private final PostsService postsService;
+	private final HttpSession httpSession;
 
 	@GetMapping("/")
-	public String index(Model model) {
+	public String index(Model model, @LoginUser SessionUser user) {
 		model.addAttribute("posts", postsService.findAllDesc());
+
+		if (user != null) {
+			model.addAttribute("userName", user.getName());
+		}
 		return "index";
 	}
 
