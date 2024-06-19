@@ -11,3 +11,5 @@ spring:
     password:
   session:
     store-type: jdbc
+    jdbc:
+      initialize-schema: always
