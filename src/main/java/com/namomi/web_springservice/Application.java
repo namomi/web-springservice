@@ -1,13 +1,11 @@
-package com.web_springservice.web;
+package com.namomi.web_springservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class WebSpringserviceApplication {
-
+public class Application {
 	public static void main(String[] args) {
-		SpringApplication.run(WebSpringserviceApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
-
 }
