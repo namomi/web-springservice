@@ -10,6 +10,10 @@ sourceCompatibility = '1.8'
 
 ext["hibernate.version"] = "5.6.5.Final"
 
+jar {
+	enabled = false
+}
+
 configurations {
 	compileOnly {
 		extendsFrom annotationProcessor
